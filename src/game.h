@@ -22,7 +22,7 @@ class Game {
   int GetScore() const;
   int GetSize() const;
 
-  Common::WindowType windowType = Common::WindowType::GameWindow;
+  Common::WindowType windowType = Common::WindowType::InstructionWindow;
  private:
   Snake snake;
   SDL_Point food;

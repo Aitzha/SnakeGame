@@ -11,12 +11,12 @@ void Controller::ChangeDirection(Snake &snake, Snake::Direction input,
   return;
 }
 
-void Controller::HandleInput(bool &running, Snake &snake, Common::WindowType windowType) const {
+void Controller::HandleInput(bool &running, Snake &snake, Common::WindowType &windowType) const {
   SDL_Event e;
   while (SDL_PollEvent(&e)) {
       if(e.type == SDL_QUIT) {
           running = false;
-      } else if(e.type == SDL_KEYDOWN /*&& windowType == Game::WindowType::gameWindow*/) {
+      } else if(e.type == SDL_KEYDOWN && windowType == Common::WindowType::GameWindow) {
           if(e.key.keysym.sym == SDLK_w || e.key.keysym.sym == SDLK_UP) {
               ChangeDirection(snake, Snake::Direction::kUp,
                               Snake::Direction::kDown);
@@ -34,12 +34,12 @@ void Controller::HandleInput(bool &running, Snake &snake, Common::WindowType win
                               Snake::Direction::kLeft);
               break;
           }
-      } else if(e.type == SDL_KEYDOWN /*&& windowType == Game::WindowType::instructionWindow*/) {
+      } else if(e.type == SDL_KEYDOWN && windowType == Common::WindowType::InstructionWindow) {
           if(e.key.keysym.sym == SDLK_SPACE) {
               running = false;
-              /*windowType = Game::WindowType::gameWindow*/
+              windowType = Game::WindowType::gameWindow
           }
-      } else if(e.type == SDL_KEYDOWN /*&& windowType == Game::WindowType::resetWindow*/) {
+      } else if(e.type == SDL_KEYDOWN && windowType == Game::WindowType::resetWindow) {
           if(e.key.keysym.sym == SDLK_r) {
               running = false;
           }

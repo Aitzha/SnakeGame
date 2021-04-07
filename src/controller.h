@@ -8,7 +8,7 @@ using namespace std;
 
 class Controller {
  public:
-  void HandleInput(bool &running, Snake &snake, Common::WindowType windowType) const;
+  void HandleInput(bool &running, Snake &snake, Common::WindowType &windowType) const;
 
  private:
   void ChangeDirection(Snake &snake, Snake::Direction input,
