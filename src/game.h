@@ -6,15 +6,23 @@
 #include "controller.h"
 #include "renderer.h"
 #include "snake.h"
+#include "Common.h"
 
 class Game {
  public:
+
   Game(std::size_t grid_width, std::size_t grid_height);
+
+  void InstructionWindow(Controller const &controller, Renderer &renderer,
+                         std::size_t target_frame_duration);
+
   void Run(Controller const &controller, Renderer &renderer,
            std::size_t target_frame_duration);
+
   int GetScore() const;
   int GetSize() const;
 
+  Common::WindowType windowType = Common::WindowType::GameWindow;
  private:
   Snake snake;
   SDL_Point food;

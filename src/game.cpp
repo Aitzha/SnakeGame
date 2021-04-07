@@ -1,4 +1,5 @@
 #include "game.h"
+#include "controller.h"
 #include <iostream>
 #include "SDL.h"
 
@@ -8,6 +9,23 @@ Game::Game(std::size_t grid_width, std::size_t grid_height)
       random_w(0, static_cast<int>(grid_width - 1)),
       random_h(0, static_cast<int>(grid_height - 1)) {
   PlaceFood();
+}
+
+void Game::InstructionWindow(Controller const &controller, Renderer &renderer,
+                             std::size_t target_frame_duration) {
+  Uint32 frame_start;
+  Uint32 frame_end;
+  Uint32 frame_duration;
+  bool running = true;
+  while(running) {
+    frame_start = SDL_GetTicks();
+    controller.HandleInput(running, snake, this->windowType);
+    frame_end = SDL_GetTicks();
+    frame_duration = frame_end - frame_start;
+    if (frame_duration < target_frame_duration) {
+      SDL_Delay(target_frame_duration - frame_duration);
+    }
+  }
 }
 
 void Game::Run(Controller const &controller, Renderer &renderer,
@@ -23,7 +41,7 @@ void Game::Run(Controller const &controller, Renderer &renderer,
     frame_start = SDL_GetTicks();
 
     // Input, Update, Render - the main game loop.
-    controller.HandleInput(running, snake);
+    controller.HandleInput(running, snake, this->windowType);
     Update();
     renderer.Render(snake, food);
 
@@ -79,7 +97,7 @@ void Game::Update() {
     PlaceFood();
     // Grow snake and increase speed.
     snake.GrowBody();
-    snake.speed += 0.02;
+    snake.speed += 0.01;
   }
 }
 

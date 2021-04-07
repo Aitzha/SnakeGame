@@ -157,7 +157,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=SDL2Test
+CMAKE_PROJECT_NAME:STATIC=SnakeGame
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib
@@ -233,6 +233,24 @@ SDL2Test_SOURCE_DIR:STATIC=/Users/gabitajtzan/Desktop/SnakeGame
 //The directory containing a CMake configuration file for SDL2.
 SDL2_DIR:PATH=/usr/local/lib/cmake/SDL2
 
+//The directory containing a CMake configuration file for SDL2_TTF.
+SDL2_TTF_DIR:PATH=SDL2_TTF_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for SDL2_ttf.
+SDL2_ttf_DIR:PATH=SDL2_ttf_DIR-NOTFOUND
+
+//Path to a file.
+SDL_TTF_INCLUDE_DIR:PATH=/usr/local/include/SDL
+
+//Path to a library.
+SDL_TTF_LIBRARY:FILEPATH=/usr/local/lib/libSDL_ttf.dylib
+
+//Value Computed by CMake
+SnakeGame_BINARY_DIR:STATIC=/Users/gabitajtzan/Desktop/SnakeGame/cmake-build-debug
+
+//Value Computed by CMake
+SnakeGame_SOURCE_DIR:STATIC=/Users/gabitajtzan/Desktop/SnakeGame
+
 
 ########################
 # INTERNAL cache entries
@@ -247,7 +265,7 @@ CMAKE_CACHEFILE_DIR:INTERNAL=/Users/gabitajtzan/Desktop/SnakeGame/cmake-build-de
 //Major version of cmake used to create the current loaded cache
 CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 //Minor version of cmake used to create the current loaded cache
-CMAKE_CACHE_MINOR_VERSION:INTERNAL=16
+CMAKE_CACHE_MINOR_VERSION:INTERNAL=17
 //Patch version of cmake used to create the current loaded cache
 CMAKE_CACHE_PATCH_VERSION:INTERNAL=5
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
@@ -348,7 +366,7 @@ CMAKE_RANLIB-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_READELF
 CMAKE_READELF-ADVANCED:INTERNAL=1
 //Path to CMake installation.
-CMAKE_ROOT:INTERNAL=/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.16
+CMAKE_ROOT:INTERNAL=/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS
 CMAKE_SHARED_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_DEBUG
@@ -379,6 +397,12 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding SDL_ttf
+FIND_PACKAGE_MESSAGE_DETAILS_SDL_ttf:INTERNAL=[/usr/local/lib/libSDL_ttf.dylib][/usr/local/include/SDL][v2.0.11()]
 //ADVANCED property for variable: ProcessorCount_cmd_sysctl
 ProcessorCount_cmd_sysctl-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: SDL_TTF_INCLUDE_DIR
+SDL_TTF_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: SDL_TTF_LIBRARY
+SDL_TTF_LIBRARY-ADVANCED:INTERNAL=1
 
