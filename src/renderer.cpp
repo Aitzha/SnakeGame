@@ -38,66 +38,7 @@ Renderer::~Renderer() {
   SDL_Quit();
 }
 
-void Renderer::ShowInstruction() {
-    SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xCC, 0x00, 0xFF);
-    SDL_RenderClear(sdl_renderer);
-
-    if(TTF_Init() == -1) {
-        printf("TTF_Init: %s\n", TTF_GetError());
-        exit(2);
-    }
-
-    // render instruction window
-    SDL_Rect instructionWindow;
-    instructionWindow.x = screen_width * 0.1;
-    instructionWindow.y = screen_height * 0.1;
-    instructionWindow.w = screen_width * 0.8;
-    instructionWindow.h = screen_height * 0.8;
-    SDL_SetRenderDrawColor(sdl_renderer, 0x1E, 0x1E, 0x1E, 0xFF);
-    SDL_RenderFillRect(sdl_renderer, &instructionWindow);
-
-    //create message surface
-    SDL_Surface *surfaceMessage = TTF_RenderText_Solid(textFont, "use this text", {255, 255, 255});
-    if(surfaceMessage == NULL) {
-        std::cout << "Error" << TTF_GetError() << std::endl;
-    }
-
-
-    //convert surface into texture
-    SDL_Texture *message = SDL_CreateTextureFromSurface(sdl_renderer, surfaceMessage);
-    if(message == NULL) {
-        std::cout << "Error" << SDL_GetError() << std::endl;
-    }
-
-    //message rectangle
-    SDL_Rect message_rect;
-    message_rect.x = screen_width * 0.2;
-    message_rect.y = screen_height * 0.2;
-    message_rect.w = screen_width * 0.6;
-    message_rect.h = screen_height * 0.6;
-
-    //put it on screen and update
-    SDL_RenderCopy(sdl_renderer, message, nullptr, &message_rect);
-    if(SDL_RenderCopy(sdl_renderer, message, nullptr, &message_rect) < 0) {
-        std::cout << "Error" << SDL_GetError() << std::endl;
-    }
-    SDL_RenderPresent(sdl_renderer);
-
-
-//    SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xCC, 0x00, 0xFF);
-//    SDL_RenderClear(sdl_renderer);
-//
-//    SDL_Rect block;
-//    block.x = 200;
-//    block.y = 200;
-//    block.w= 50;
-//    block.h = 50;
-//    SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0x00, 0x00, 0xFF);
-//    SDL_RenderFillRect(sdl_renderer, &block);
-//    SDL_RenderPresent(sdl_renderer);
-}
-
-void Renderer::Render(Snake const snake, SDL_Point const &food) {
+void Renderer::Render(Snake const snake, SDL_Point const &food, Map &map) {
   SDL_Rect block;
   block.w = screen_width / grid_width;
   block.h = screen_height / grid_height;
@@ -105,6 +46,14 @@ void Renderer::Render(Snake const snake, SDL_Point const &food) {
   // Clear screen
   SDL_SetRenderDrawColor(sdl_renderer, 0x1E, 0x1E, 0x1E, 0xFF);
   SDL_RenderClear(sdl_renderer);
+
+  // Render walls
+  SDL_SetRenderDrawColor(sdl_renderer, 0x00, 0xFF, 0x00, 0xFF);
+  for(int i = 0; i < map.numberOfWallPoints; i++) {
+      block.x = map.get_xPosOf(i) * block.w;
+      block.y = map.get_yPosOf(i) * block.h;
+      SDL_RenderFillRect(sdl_renderer, &block);
+  }
 
   // Render food
   SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xCC, 0x00, 0xFF);

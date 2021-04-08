@@ -6,47 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/Users/gabitajtzan/Desktop/SnakeGame/src/Common.h
-
-/Users/gabitajtzan/Desktop/SnakeGame/src/controller.h
-snake.h
-/Users/gabitajtzan/Desktop/SnakeGame/src/snake.h
-Common.h
-/Users/gabitajtzan/Desktop/SnakeGame/src/Common.h
-
-/Users/gabitajtzan/Desktop/SnakeGame/src/game.cpp
-game.h
-/Users/gabitajtzan/Desktop/SnakeGame/src/game.h
-controller.h
-/Users/gabitajtzan/Desktop/SnakeGame/src/controller.h
-iostream
+/Users/gabitajtzan/Desktop/SnakeGame/src/Map.h
+vector
 -
-SDL.h
-/Users/gabitajtzan/Desktop/SnakeGame/src/SDL.h
-
-/Users/gabitajtzan/Desktop/SnakeGame/src/game.h
-random
--
-SDL.h
-/Users/gabitajtzan/Desktop/SnakeGame/src/SDL.h
-controller.h
-/Users/gabitajtzan/Desktop/SnakeGame/src/controller.h
-renderer.h
-/Users/gabitajtzan/Desktop/SnakeGame/src/renderer.h
-snake.h
-/Users/gabitajtzan/Desktop/SnakeGame/src/snake.h
-Common.h
-/Users/gabitajtzan/Desktop/SnakeGame/src/Common.h
-
-/Users/gabitajtzan/Desktop/SnakeGame/src/main.cpp
-iostream
--
-controller.h
-/Users/gabitajtzan/Desktop/SnakeGame/src/controller.h
-game.h
-/Users/gabitajtzan/Desktop/SnakeGame/src/game.h
-renderer.h
-/Users/gabitajtzan/Desktop/SnakeGame/src/renderer.h
 
 /Users/gabitajtzan/Desktop/SnakeGame/src/renderer.cpp
 renderer.h
@@ -67,12 +29,16 @@ SDL_ttf.h
 /Users/gabitajtzan/Desktop/SnakeGame/src/SDL_ttf.h
 snake.h
 /Users/gabitajtzan/Desktop/SnakeGame/src/snake.h
+Map.h
+/Users/gabitajtzan/Desktop/SnakeGame/src/Map.h
 
 /Users/gabitajtzan/Desktop/SnakeGame/src/snake.h
 vector
 -
 SDL.h
 /Users/gabitajtzan/Desktop/SnakeGame/src/SDL.h
+Map.h
+/Users/gabitajtzan/Desktop/SnakeGame/src/Map.h
 
 /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL.h
 SDL_main.h

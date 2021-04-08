@@ -92,6 +92,12 @@
 		<Unit filename="/Users/gabitajtzan/Desktop/SnakeGame/src/Common.h">
 			<Option target="SnakeGame"/>
 		</Unit>
+		<Unit filename="/Users/gabitajtzan/Desktop/SnakeGame/src/Map.cpp">
+			<Option target="SnakeGame"/>
+		</Unit>
+		<Unit filename="/Users/gabitajtzan/Desktop/SnakeGame/src/Map.h">
+			<Option target="SnakeGame"/>
+		</Unit>
 		<Unit filename="/Users/gabitajtzan/Desktop/SnakeGame/src/controller.cpp">
 			<Option target="SnakeGame"/>
 		</Unit>
