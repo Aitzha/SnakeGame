@@ -17,10 +17,12 @@ class Game {
   void Run(Controller const &controller, Renderer &renderer,
            std::size_t target_frame_duration);
 
+  void SetScore();
   int GetScore() const;
   int GetSize() const;
 
   Common::WindowType windowType = Common::WindowType::GameWindow;
+  Common indicator;
  private:
   int gridWidth;
   int gridHeight;
@@ -33,10 +35,8 @@ class Game {
   std::uniform_int_distribution<int> random_w;
   std::uniform_int_distribution<int> random_h;
 
-  int score{0};
-
-  void PlaceFood(Map &map);
-  void Update(Map &map);
+  void PlaceFood();
+  void Update();
 };
 
 #endif

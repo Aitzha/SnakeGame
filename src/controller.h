@@ -6,9 +6,17 @@
 
 class Controller {
  public:
-  void HandleInput(bool &running, Snake &snake, Common::WindowType &windowType) const;
+  Controller(int gridWidth, int gridHeight) {
+      this->gridWidth = gridWidth;
+      this->gridHeight = gridHeight;
+  }
+
+  void HandleInput(bool &running, Snake &snake, Common::WindowType &windowType,
+                   Common &indicator) const;
 
  private:
+  int gridWidth;
+  int gridHeight;
   void ChangeDirection(Snake &snake, Snake::Direction input,
                        Snake::Direction opposite) const;
 };

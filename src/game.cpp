@@ -24,14 +24,14 @@ void Game::Run(Controller const &controller, Renderer &renderer,
   int frame_count = 0;
   bool running = true;
 
-  PlaceFood(map);
+  PlaceFood();
 
   while (running) {
     frame_start = SDL_GetTicks();
 
     // Input, Update, Render - the main game loop.
-    controller.HandleInput(running, snake, this->windowType);
-    Update(map);
+    controller.HandleInput(running, snake, this->windowType, indicator);
+    Update();
     renderer.Render(snake, food, map);
 
     frame_end = SDL_GetTicks();
@@ -43,7 +43,7 @@ void Game::Run(Controller const &controller, Renderer &renderer,
 
     // After every second, update the window title.
     if (frame_end - title_timestamp >= 1000) {
-      renderer.UpdateWindowTitle(score, frame_count);
+      renderer.UpdateWindowTitle(indicator, frame_count);
       frame_count = 0;
       title_timestamp = frame_end;
     }
@@ -54,10 +54,11 @@ void Game::Run(Controller const &controller, Renderer &renderer,
     if (frame_duration < target_frame_duration) {
       SDL_Delay(target_frame_duration - frame_duration);
     }
+
   }
 }
 
-void Game::PlaceFood(Map &map) {
+void Game::PlaceFood() {
   int x, y;
   while (true) {
     x = random_w(engine);
@@ -87,8 +88,12 @@ void Game::PlaceFood(Map &map) {
   }
 }
 
-void Game::Update(Map &map) {
-  if (!snake.alive) return;
+void Game::Update() {
+  if (!snake.alive) {
+      windowType = Common::WindowType::ResetWindow;
+      return;
+  }
+
 
   snake.Update(map);
 
@@ -97,13 +102,12 @@ void Game::Update(Map &map) {
 
   // Check if there's food over here
   if (food.x == new_x && food.y == new_y) {
-    score++;
-    PlaceFood(map);
+    indicator.score++;
+    PlaceFood();
     // Grow snake and increase speed.
     snake.GrowBody();
     snake.speed += 0.01;
   }
 }
 
-int Game::GetScore() const { return score; }
 int Game::GetSize() const { return snake.size; }

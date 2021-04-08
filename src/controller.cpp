@@ -9,7 +9,8 @@ void Controller::ChangeDirection(Snake &snake, Snake::Direction input,
   return;
 }
 
-void Controller::HandleInput(bool &running, Snake &snake, Common::WindowType &windowType) const {
+void Controller::HandleInput(bool &running, Snake &snake,
+                             Common::WindowType &windowType, Common &indicator) const {
   SDL_Event e;
   while (SDL_PollEvent(&e)) {
       if(e.type == SDL_QUIT) {
@@ -39,7 +40,15 @@ void Controller::HandleInput(bool &running, Snake &snake, Common::WindowType &wi
           }
       } else if(e.type == SDL_KEYDOWN && windowType == Common::WindowType::ResetWindow) {
           if(e.key.keysym.sym == SDLK_r) {
-              running = false;
+              windowType = Common::WindowType::GameWindow;
+              snake.size = 1;
+              snake.head_x = gridWidth / 2;
+              snake.head_y = gridHeight / 2;
+              snake.alive = true;
+              snake.body.clear();
+              snake.direction = Snake::Direction::kUp;
+              snake.speed = 0.1f;
+              indicator.score = 0;
           }
       }
   }
