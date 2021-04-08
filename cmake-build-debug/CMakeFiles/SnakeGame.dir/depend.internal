@@ -112,6 +112,7 @@ CMakeFiles/SnakeGame.dir/src/game.cpp.o
  /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_video.h
  /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/begin_code.h
  /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/close_code.h
+ /usr/local/include/SDL2/SDL_ttf.h
 CMakeFiles/SnakeGame.dir/src/main.cpp.o
  /Users/gabitajtzan/Desktop/SnakeGame/src/Common.h
  /Users/gabitajtzan/Desktop/SnakeGame/src/controller.h
@@ -167,6 +168,7 @@ CMakeFiles/SnakeGame.dir/src/main.cpp.o
  /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_video.h
  /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/begin_code.h
  /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/close_code.h
+ /usr/local/include/SDL2/SDL_ttf.h
 CMakeFiles/SnakeGame.dir/src/renderer.cpp.o
  /Users/gabitajtzan/Desktop/SnakeGame/src/renderer.cpp
  /Users/gabitajtzan/Desktop/SnakeGame/src/renderer.h
@@ -219,6 +221,7 @@ CMakeFiles/SnakeGame.dir/src/renderer.cpp.o
  /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_video.h
  /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/begin_code.h
  /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/close_code.h
+ /usr/local/include/SDL2/SDL_ttf.h
 CMakeFiles/SnakeGame.dir/src/snake.cpp.o
  /Users/gabitajtzan/Desktop/SnakeGame/src/snake.cpp
  /Users/gabitajtzan/Desktop/SnakeGame/src/snake.h

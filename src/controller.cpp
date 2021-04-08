@@ -2,8 +2,6 @@
 #include <iostream>
 #include "SDL.h"
 #include "snake.h"
-//#include "game.h"
-using namespace std;
 
 void Controller::ChangeDirection(Snake &snake, Snake::Direction input,
                                  Snake::Direction opposite) const {
@@ -37,9 +35,9 @@ void Controller::HandleInput(bool &running, Snake &snake, Common::WindowType &wi
       } else if(e.type == SDL_KEYDOWN && windowType == Common::WindowType::InstructionWindow) {
           if(e.key.keysym.sym == SDLK_SPACE) {
               running = false;
-              windowType = Game::WindowType::gameWindow
+              windowType = Common::WindowType::GameWindow;
           }
-      } else if(e.type == SDL_KEYDOWN && windowType == Game::WindowType::resetWindow) {
+      } else if(e.type == SDL_KEYDOWN && windowType == Common::WindowType::ResetWindow) {
           if(e.key.keysym.sym == SDLK_r) {
               running = false;
           }

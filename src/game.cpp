@@ -20,6 +20,8 @@ void Game::InstructionWindow(Controller const &controller, Renderer &renderer,
   while(running) {
     frame_start = SDL_GetTicks();
     controller.HandleInput(running, snake, this->windowType);
+    renderer.ShowInstruction();
+
     frame_end = SDL_GetTicks();
     frame_duration = frame_end - frame_start;
     if (frame_duration < target_frame_duration) {

@@ -3,8 +3,6 @@
 
 #include "snake.h"
 #include "Common.h"
-//#include "game.h"
-using namespace std;
 
 class Controller {
  public:

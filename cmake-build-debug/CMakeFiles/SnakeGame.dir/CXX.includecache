@@ -38,11 +38,33 @@ snake.h
 Common.h
 /Users/gabitajtzan/Desktop/SnakeGame/src/Common.h
 
+/Users/gabitajtzan/Desktop/SnakeGame/src/main.cpp
+iostream
+-
+controller.h
+/Users/gabitajtzan/Desktop/SnakeGame/src/controller.h
+game.h
+/Users/gabitajtzan/Desktop/SnakeGame/src/game.h
+renderer.h
+/Users/gabitajtzan/Desktop/SnakeGame/src/renderer.h
+
+/Users/gabitajtzan/Desktop/SnakeGame/src/renderer.cpp
+renderer.h
+/Users/gabitajtzan/Desktop/SnakeGame/src/renderer.h
+iostream
+-
+string
+-
+
 /Users/gabitajtzan/Desktop/SnakeGame/src/renderer.h
 vector
 -
+string
+-
 SDL.h
 /Users/gabitajtzan/Desktop/SnakeGame/src/SDL.h
+SDL_ttf.h
+/Users/gabitajtzan/Desktop/SnakeGame/src/SDL_ttf.h
 snake.h
 /Users/gabitajtzan/Desktop/SnakeGame/src/snake.h
 
@@ -691,4 +713,12 @@ close_code.h
 /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/begin_code.h
 
 /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/close_code.h
+
+/usr/local/include/SDL2/SDL_ttf.h
+SDL.h
+/usr/local/include/SDL2/SDL.h
+begin_code.h
+/usr/local/include/SDL2/begin_code.h
+close_code.h
+/usr/local/include/SDL2/close_code.h
 
