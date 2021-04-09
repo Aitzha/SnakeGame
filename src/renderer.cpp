@@ -38,7 +38,8 @@ Renderer::~Renderer() {
   SDL_Quit();
 }
 
-void Renderer::Render(Snake const snake, SDL_Point const &food, Map &map) {
+void Renderer::Render(Snake const snake, SDL_Point const &food, Map &map,
+                      SDL_Point const &superFood, bool superFoodExist) {
   SDL_Rect block;
   block.w = screen_width / grid_width;
   block.h = screen_height / grid_height;
@@ -60,6 +61,14 @@ void Renderer::Render(Snake const snake, SDL_Point const &food, Map &map) {
   block.x = food.x * block.w;
   block.y = food.y * block.h;
   SDL_RenderFillRect(sdl_renderer, &block);
+
+  // Render superFood
+  if(superFoodExist) {
+      SDL_SetRenderDrawColor(sdl_renderer, 0xDC, 0x14, 0x3C, 0xFF);
+      block.x = superFood.x * block.w;
+      block.y = superFood.y * block.h;
+      SDL_RenderFillRect(sdl_renderer, &block);
+  }
 
   // Render snake's body
   SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
@@ -83,7 +92,13 @@ void Renderer::Render(Snake const snake, SDL_Point const &food, Map &map) {
   SDL_RenderPresent(sdl_renderer);
 }
 
-void Renderer::UpdateWindowTitle(Common indicator, int fps) {
-  std::string title{"Snake Score: " + std::to_string(indicator.score) + " FPS: " + std::to_string(fps)};
-  SDL_SetWindowTitle(sdl_window, title.c_str());
+void Renderer::UpdateWindowTitle(Common indicator, int fps, int timer) {
+  if(timer <= 0) {
+      std::string title{"Snake Score: " + std::to_string(indicator.score) + " FPS: " + std::to_string(fps)};
+      SDL_SetWindowTitle(sdl_window, title.c_str());
+  } else {
+      int sec = timer / 1000;
+      std::string title{"SuperFood will disappear in " + std::to_string(sec) + " sec"};
+      SDL_SetWindowTitle(sdl_window, title.c_str());
+  }
 }

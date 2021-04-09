@@ -30,9 +30,9 @@ void Game::Run(Controller const &controller, Renderer &renderer,
     frame_start = SDL_GetTicks();
 
     // Input, Update, Render - the main game loop.
-    controller.HandleInput(running, snake, this->windowType, indicator);
+    controller.HandleInput(running, snake, this->windowType, indicator, superFoodExist, timerForSuperFood);
     Update();
-    renderer.Render(snake, food, map);
+    renderer.Render(snake, food, map, superFood, superFoodExist);
 
     frame_end = SDL_GetTicks();
 
@@ -41,9 +41,14 @@ void Game::Run(Controller const &controller, Renderer &renderer,
     frame_count++;
     frame_duration = frame_end - frame_start;
 
+    //keep track of timer for super food
+    if(superFoodExist) {
+        timerForSuperFood -= frame_duration;
+    }
+
     // After every second, update the window title.
     if (frame_end - title_timestamp >= 1000) {
-      renderer.UpdateWindowTitle(indicator, frame_count);
+      renderer.UpdateWindowTitle(indicator, frame_count, timerForSuperFood);
       frame_count = 0;
       title_timestamp = frame_end;
     }
@@ -68,8 +73,6 @@ void Game::PlaceFood() {
     // Check that the location is not occupied by a snake item before placing
     // food.
     if (!snake.SnakeCell(x, y)) {
-      food.x = x;
-      food.y = y;
       notOnSnake = true;
     }
 
@@ -94,20 +97,70 @@ void Game::Update() {
       return;
   }
 
-
   snake.Update(map);
 
   int new_x = static_cast<int>(snake.head_x);
   int new_y = static_cast<int>(snake.head_y);
 
   // Check if there's food over here
-  if (food.x == new_x && food.y == new_y) {
+  if(food.x == new_x && food.y == new_y) {
+    foodCollected.count++;
     indicator.score++;
     PlaceFood();
     // Grow snake and increase speed.
     snake.GrowBody();
     snake.speed += 0.01;
+
+    //check if 10 basic foods are collected
+    if(foodCollected.count % 10 == 0) {
+        superFoodExist = true;
+        PlaceSuperFood();
+        timerForSuperFood = 10000;
+    }
+  }
+
+  if(timerForSuperFood <= 0) {
+      superFoodExist = false;
+  } else if(superFoodExist && superFood.x == new_x && superFood.y == new_y) {
+      timerForSuperFood = 0;
+      superFoodExist = false;
+      indicator.score += 5;
   }
 }
 
 int Game::GetSize() const { return snake.size; }
+
+void Game::PlaceSuperFood() {
+    int x, y;
+    while (true) {
+        x = random_w(engine);
+        y = random_h(engine);
+        int count = 0;
+        bool notOnSnake = false;
+        bool notOnFood = false;
+
+        // Check that the location is not occupied by a snake item before placing
+        // food.
+        if (!snake.SnakeCell(x, y)) {
+            notOnSnake = true;
+        }
+
+        //Check that the location is not occupied by the walls
+        for(int i = 0; i < map.numberOfWallPoints; i++) {
+            if(x != map.get_xPosOf(i) && y != map.get_yPosOf(i)) {
+                count++;
+            }
+        }
+
+        //Check that the location is not occupied by another food
+        if(x != food.x && y != food.y) {
+            notOnFood = true;
+        }
+
+        if(count == map.numberOfWallPoints && notOnSnake && notOnFood) {
+            superFood.x = x;
+            superFood.y = y;
+            return;
+        }
+    }
+}

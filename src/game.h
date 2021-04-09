@@ -17,18 +17,24 @@ class Game {
   void Run(Controller const &controller, Renderer &renderer,
            std::size_t target_frame_duration);
 
-  void SetScore();
-  int GetScore() const;
+
   int GetSize() const;
 
   Common::WindowType windowType = Common::WindowType::GameWindow;
   Common indicator;
+
+  bool superFoodExist = false;
  private:
   int gridWidth;
   int gridHeight;
+
   Snake snake;
-  SDL_Point food;
   Map map;
+
+  Common foodCollected;
+  SDL_Point food;
+  SDL_Point superFood;
+  int timerForSuperFood = 0;
 
   std::random_device dev;
   std::mt19937 engine;
@@ -36,6 +42,7 @@ class Game {
   std::uniform_int_distribution<int> random_h;
 
   void PlaceFood();
+  void PlaceSuperFood();
   void Update();
 };
 

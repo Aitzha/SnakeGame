@@ -12,7 +12,7 @@ class Controller {
   }
 
   void HandleInput(bool &running, Snake &snake, Common::WindowType &windowType,
-                   Common &indicator) const;
+                   Common &indicator, bool &superFoodExist, int &timer) const;
 
  private:
   int gridWidth;

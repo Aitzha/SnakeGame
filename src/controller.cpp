@@ -9,8 +9,8 @@ void Controller::ChangeDirection(Snake &snake, Snake::Direction input,
   return;
 }
 
-void Controller::HandleInput(bool &running, Snake &snake,
-                             Common::WindowType &windowType, Common &indicator) const {
+void Controller::HandleInput(bool &running, Snake &snake,Common::WindowType &windowType,
+                             Common &indicator, bool &superFoodExist, int &timer) const {
   SDL_Event e;
   while (SDL_PollEvent(&e)) {
       if(e.type == SDL_QUIT) {
@@ -49,6 +49,8 @@ void Controller::HandleInput(bool &running, Snake &snake,
               snake.direction = Snake::Direction::kUp;
               snake.speed = 0.1f;
               indicator.score = 0;
+              superFoodExist = false;
+              timer = 0;
           }
       }
   }
