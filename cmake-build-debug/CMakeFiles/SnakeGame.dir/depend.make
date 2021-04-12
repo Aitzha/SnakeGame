@@ -7,6 +7,57 @@ CMakeFiles/SnakeGame.dir/src/Common.cpp.o: ../src/Common.h
 CMakeFiles/SnakeGame.dir/src/Map.cpp.o: ../src/Map.cpp
 CMakeFiles/SnakeGame.dir/src/Map.cpp.o: ../src/Map.h
 
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: ../src/Text.cpp
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: ../src/Text.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_assert.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_atomic.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_audio.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_blendmode.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_clipboard.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_config.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_cpuinfo.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_endian.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_error.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_events.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_filesystem.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_gamecontroller.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_gesture.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_haptic.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_hints.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_joystick.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_keyboard.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_keycode.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_loadso.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_locale.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_log.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_main.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_messagebox.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_metal.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_misc.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_mouse.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_mutex.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_pixels.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_platform.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_power.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_quit.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_rect.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_render.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_rwops.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_scancode.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_sensor.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_shape.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_stdinc.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_surface.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_system.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_thread.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_timer.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_touch.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_version.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_video.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/begin_code.h
+CMakeFiles/SnakeGame.dir/src/Text.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/close_code.h
+
 CMakeFiles/SnakeGame.dir/src/controller.cpp.o: ../src/Common.h
 CMakeFiles/SnakeGame.dir/src/controller.cpp.o: ../src/Map.h
 CMakeFiles/SnakeGame.dir/src/controller.cpp.o: ../src/controller.cpp
@@ -63,6 +114,7 @@ CMakeFiles/SnakeGame.dir/src/controller.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/i
 
 CMakeFiles/SnakeGame.dir/src/game.cpp.o: ../src/Common.h
 CMakeFiles/SnakeGame.dir/src/game.cpp.o: ../src/Map.h
+CMakeFiles/SnakeGame.dir/src/game.cpp.o: ../src/Text.h
 CMakeFiles/SnakeGame.dir/src/game.cpp.o: ../src/controller.h
 CMakeFiles/SnakeGame.dir/src/game.cpp.o: ../src/game.cpp
 CMakeFiles/SnakeGame.dir/src/game.cpp.o: ../src/game.h
@@ -116,10 +168,10 @@ CMakeFiles/SnakeGame.dir/src/game.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include
 CMakeFiles/SnakeGame.dir/src/game.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_video.h
 CMakeFiles/SnakeGame.dir/src/game.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/begin_code.h
 CMakeFiles/SnakeGame.dir/src/game.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/close_code.h
-CMakeFiles/SnakeGame.dir/src/game.cpp.o: /usr/local/include/SDL2/SDL_ttf.h
 
 CMakeFiles/SnakeGame.dir/src/main.cpp.o: ../src/Common.h
 CMakeFiles/SnakeGame.dir/src/main.cpp.o: ../src/Map.h
+CMakeFiles/SnakeGame.dir/src/main.cpp.o: ../src/Text.h
 CMakeFiles/SnakeGame.dir/src/main.cpp.o: ../src/controller.h
 CMakeFiles/SnakeGame.dir/src/main.cpp.o: ../src/game.h
 CMakeFiles/SnakeGame.dir/src/main.cpp.o: ../src/main.cpp
@@ -173,10 +225,10 @@ CMakeFiles/SnakeGame.dir/src/main.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include
 CMakeFiles/SnakeGame.dir/src/main.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_video.h
 CMakeFiles/SnakeGame.dir/src/main.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/begin_code.h
 CMakeFiles/SnakeGame.dir/src/main.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/close_code.h
-CMakeFiles/SnakeGame.dir/src/main.cpp.o: /usr/local/include/SDL2/SDL_ttf.h
 
 CMakeFiles/SnakeGame.dir/src/renderer.cpp.o: ../src/Common.h
 CMakeFiles/SnakeGame.dir/src/renderer.cpp.o: ../src/Map.h
+CMakeFiles/SnakeGame.dir/src/renderer.cpp.o: ../src/Text.h
 CMakeFiles/SnakeGame.dir/src/renderer.cpp.o: ../src/renderer.cpp
 CMakeFiles/SnakeGame.dir/src/renderer.cpp.o: ../src/renderer.h
 CMakeFiles/SnakeGame.dir/src/renderer.cpp.o: ../src/snake.h
@@ -228,7 +280,6 @@ CMakeFiles/SnakeGame.dir/src/renderer.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/inc
 CMakeFiles/SnakeGame.dir/src/renderer.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/SDL_video.h
 CMakeFiles/SnakeGame.dir/src/renderer.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/begin_code.h
 CMakeFiles/SnakeGame.dir/src/renderer.cpp.o: /usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/close_code.h
-CMakeFiles/SnakeGame.dir/src/renderer.cpp.o: /usr/local/include/SDL2/SDL_ttf.h
 
 CMakeFiles/SnakeGame.dir/src/snake.cpp.o: ../src/Map.h
 CMakeFiles/SnakeGame.dir/src/snake.cpp.o: ../src/snake.cpp

@@ -15,7 +15,6 @@ int main() {
   Controller controller(kGridWidth, kGridHeight);
   Game game(kGridWidth, kGridHeight);
 
-  game.showInstruction(controller, renderer, kMsPerFrame);
   game.Run(controller, renderer, kMsPerFrame);
   std::cout << "Game has terminated successfully!\n";
   std::cout << "Score: " << game.indicator.score << "\n";

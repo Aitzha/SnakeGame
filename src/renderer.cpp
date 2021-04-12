@@ -38,46 +38,75 @@ Renderer::~Renderer() {
   SDL_Quit();
 }
 
-void Renderer::renderInstruction() {
+void Renderer::RenderText(Common::WindowType &windowType) {
     // Clear screen
     SDL_SetRenderDrawColor(sdl_renderer, 0x1E, 0x1E, 0x1E, 0xFF);
     SDL_RenderClear(sdl_renderer);
+
     // Draw text
     int x = 50, y = 50;
     Text text;
-    textTexture = text.identifyText(instructionText);
-    int wordStartIndex = 1;
-    int wordEndIndex = 0;
+    std::vector<std::string> textToPrint;
 
-    for(std::vector<Text::Line> element : textTexture) {
-        wordEndIndex++;
-        int space = 0;
-        if(element.empty() || wordEndIndex == instructionText.length()) {
-            if(wordEndIndex == instructionText.length()) {
-                space = 0;
-            }
-            if(((wordEndIndex - wordStartIndex - space) * 30) + x + 50 > screen_width) {
-                y += 50;
-                x = 50;
-            }
-            int currentIndex = 1;
-            for(auto letter : textTexture) {
-                if(currentIndex >= wordStartIndex) {
-                    for(auto line : letter) {
-                        SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
-                        SDL_Point a = text.getPoint(line.a, x, y);
-                        SDL_Point b = text.getPoint(line.b, x, y);
-                        SDL_RenderDrawLine(sdl_renderer, a.x, a.y, b.x, b.y);
-                    }
-                    x += 30;
-                    if(wordEndIndex == currentIndex) {
-                        wordStartIndex = wordEndIndex + 1;
-                        break;
-                    }
+    //choose text
+    if(windowType == Common::WindowType::InstructionWindow) {
+        textToPrint = instructionText;
+    } else if(windowType == Common::WindowType::ResetWindow) {
+        textToPrint = resetText;
+    }
+
+    //loop to draw each sentence
+    for(auto sentence : textToPrint) {
+        textTexture = text.identifyText(sentence);
+        int wordStartIndex = 1;
+        int wordEndIndex = 0;
+
+        //loop to find word
+        for(std::vector<Text::Line> element : textTexture) {
+            wordEndIndex++;
+            int space = 0;
+
+            if(element.empty() || wordEndIndex == sentence.length()) {
+
+                if(wordEndIndex == sentence.length()) {
+                    space = 0;
                 }
-                currentIndex++;
+
+                if(((wordEndIndex - wordStartIndex - space) * 30) + x + 50 > screen_width) {
+                    y += 50;
+                    x = 50;
+                }
+
+                int currentIndex = 1;
+
+                //loop to draw each letter of word
+                for(auto letter : textTexture) {
+
+                    if(currentIndex >= wordStartIndex) {
+
+                        //loop to draw each line of letter
+                        for(auto line : letter) {
+                            SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+                            SDL_Point a = text.getPoint(line.a, x, y);
+                            SDL_Point b = text.getPoint(line.b, x, y);
+                            SDL_RenderDrawLine(sdl_renderer, a.x, a.y, b.x, b.y);
+                        }
+
+                        x += 30;
+
+                        if(wordEndIndex == currentIndex) {
+                            wordStartIndex = wordEndIndex + 1;
+                            break;
+                        }
+                    }
+
+                    currentIndex++;
+                }
             }
         }
+
+        y += 100;
+        x = 50;
     }
 
     // Update Screen

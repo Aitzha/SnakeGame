@@ -11,7 +11,7 @@ class Controller {
       this->gridHeight = gridHeight;
   }
 
-  void HandleInput(bool &running, Snake &snake, Common::WindowType &windowType,
+  void HandleInput(Snake &snake, Common::WindowType &windowType,
                    Common &indicator, bool &superFoodExist, int &timer) const;
 
  private:

@@ -15,7 +15,7 @@ class Renderer {
            const std::size_t grid_width, const std::size_t grid_height);
   ~Renderer();
 
-  void renderInstruction();
+  void RenderText(Common::WindowType &windowType);
   void Render(Snake const snake, SDL_Point const &food, Map &map,
               SDL_Point const &superFood, bool superFoodExist);
 
@@ -32,8 +32,9 @@ class Renderer {
 
     std::vector<std::vector<Text::Line>> textTexture;
 
-  std::string instructionText = "Use WASD or arrow keys to move";
-  std::string resetText = "press R to reset";
+  std::vector<std::string> instructionText = {"Use WASD or arrow keys to move",
+                                              "Press Space to start"};
+  std::vector<std::string> resetText = {"press R to reset"};
 };
 
 #endif

@@ -14,27 +14,6 @@ Game::Game(std::size_t grid_width, std::size_t grid_height)
     map.makeMap();
 }
 
-void Game::showInstruction(Controller const &controller, Renderer &renderer,
-                           std::size_t target_frame_duration) {
-    Uint32 frame_start;
-    Uint32 frame_end;
-    Uint32 frame_duration;
-    bool running = true;
-
-    while(running && !indicator.terminated) {
-        frame_start = SDL_GetTicks();
-
-        controller.HandleInput(running, snake, windowType, indicator, superFoodExist, timerForSuperFood);
-        renderer.renderInstruction();
-
-        frame_end = SDL_GetTicks();
-        frame_duration = frame_end - frame_start;
-
-        if (frame_duration < target_frame_duration) {
-            SDL_Delay(target_frame_duration - frame_duration);
-        }
-    }
-}
 
 void Game::Run(Controller const &controller, Renderer &renderer,
                std::size_t target_frame_duration) {
@@ -43,17 +22,21 @@ void Game::Run(Controller const &controller, Renderer &renderer,
   Uint32 frame_end;
   Uint32 frame_duration;
   int frame_count = 0;
-  bool running = true;
 
   PlaceFood();
 
-  while (running && !indicator.terminated) {
+  while (!indicator.terminated) {
     frame_start = SDL_GetTicks();
 
     // Input, Update, Render - the main game loop.
-    controller.HandleInput(running, snake, windowType, indicator, superFoodExist, timerForSuperFood);
-    Update();
-    renderer.Render(snake, food, map, superFood, superFoodExist);
+    controller.HandleInput(snake, windowType, indicator, superFoodExist, timerForSuperFood);
+    if(windowType == Common::WindowType::GameWindow) {
+        Update();
+        renderer.Render(snake, food, map, superFood, superFoodExist);
+    } else if(windowType == Common::WindowType::ResetWindow || windowType == Common::WindowType::InstructionWindow) {
+        renderer.RenderText(windowType);
+    }
+
 
     frame_end = SDL_GetTicks();
 
@@ -64,7 +47,7 @@ void Game::Run(Controller const &controller, Renderer &renderer,
 
 
     // After every second, update the window title.
-    if (frame_end - title_timestamp >= 1000) {
+    if (frame_end - title_timestamp >= 1000 && windowType == Common::WindowType::GameWindow) {
       renderer.UpdateWindowTitle(indicator, frame_count, timerForSuperFood);
       frame_count = 0;
       title_timestamp = frame_end;
@@ -80,7 +63,6 @@ void Game::Run(Controller const &controller, Renderer &renderer,
     if (frame_duration < target_frame_duration) {
       SDL_Delay(target_frame_duration - frame_duration);
     }
-
   }
 }
 

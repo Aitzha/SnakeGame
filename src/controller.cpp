@@ -9,7 +9,7 @@ void Controller::ChangeDirection(Snake &snake, Snake::Direction input,
   return;
 }
 
-void Controller::HandleInput(bool &running, Snake &snake,Common::WindowType &windowType,
+void Controller::HandleInput(Snake &snake,Common::WindowType &windowType,
                              Common &indicator, bool &superFoodExist, int &timer) const {
   SDL_Event e;
   while (SDL_PollEvent(&e)) {
@@ -35,7 +35,6 @@ void Controller::HandleInput(bool &running, Snake &snake,Common::WindowType &win
           }
       } else if(e.type == SDL_KEYDOWN && windowType == Common::WindowType::InstructionWindow) {
           if(e.key.keysym.sym == SDLK_SPACE) {
-              running = false;
               windowType = Common::WindowType::GameWindow;
           }
       } else if(e.type == SDL_KEYDOWN && windowType == Common::WindowType::ResetWindow) {

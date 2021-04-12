@@ -6,5 +6,5 @@ CXX_FLAGS = -nostdinc++ -isystem/Users/gabitajtzan/Documents/Soft/clang+llvm-6.0
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/local/Cellar/sdl2/2.0.14_1/include/SDL2 -I/usr/local/include/SDL2 -I/Users/gabitajtzan/Desktop/SnakeGame/src 
+CXX_INCLUDES = -I/usr/local/Cellar/sdl2/2.0.14_1/include/SDL2 -I/Users/gabitajtzan/Desktop/SnakeGame/src 
 
