@@ -11,6 +11,7 @@ public:
     enum WindowType{InstructionWindow, GameWindow, ResetWindow};
     int score = 0;
     int count = 0;
+    bool terminated = false;
 private:
 
 };

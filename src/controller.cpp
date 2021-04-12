@@ -14,7 +14,7 @@ void Controller::HandleInput(bool &running, Snake &snake,Common::WindowType &win
   SDL_Event e;
   while (SDL_PollEvent(&e)) {
       if(e.type == SDL_QUIT) {
-          running = false;
+          indicator.terminated = true;
       } else if(e.type == SDL_KEYDOWN && windowType == Common::WindowType::GameWindow) {
           if(e.key.keysym.sym == SDLK_w || e.key.keysym.sym == SDLK_UP) {
               ChangeDirection(snake, Snake::Direction::kUp,
@@ -49,6 +49,7 @@ void Controller::HandleInput(bool &running, Snake &snake,Common::WindowType &win
               snake.direction = Snake::Direction::kUp;
               snake.speed = 0.1f;
               indicator.score = 0;
+              indicator.count = 0;
               superFoodExist = false;
               timer = 0;
           }

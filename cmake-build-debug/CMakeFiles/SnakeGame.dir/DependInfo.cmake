@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/gabitajtzan/Desktop/SnakeGame/src/Common.cpp" "/Users/gabitajtzan/Desktop/SnakeGame/cmake-build-debug/CMakeFiles/SnakeGame.dir/src/Common.cpp.o"
   "/Users/gabitajtzan/Desktop/SnakeGame/src/Map.cpp" "/Users/gabitajtzan/Desktop/SnakeGame/cmake-build-debug/CMakeFiles/SnakeGame.dir/src/Map.cpp.o"
+  "/Users/gabitajtzan/Desktop/SnakeGame/src/Text.cpp" "/Users/gabitajtzan/Desktop/SnakeGame/cmake-build-debug/CMakeFiles/SnakeGame.dir/src/Text.cpp.o"
   "/Users/gabitajtzan/Desktop/SnakeGame/src/controller.cpp" "/Users/gabitajtzan/Desktop/SnakeGame/cmake-build-debug/CMakeFiles/SnakeGame.dir/src/controller.cpp.o"
   "/Users/gabitajtzan/Desktop/SnakeGame/src/game.cpp" "/Users/gabitajtzan/Desktop/SnakeGame/cmake-build-debug/CMakeFiles/SnakeGame.dir/src/game.cpp.o"
   "/Users/gabitajtzan/Desktop/SnakeGame/src/main.cpp" "/Users/gabitajtzan/Desktop/SnakeGame/cmake-build-debug/CMakeFiles/SnakeGame.dir/src/main.cpp.o"

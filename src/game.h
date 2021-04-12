@@ -14,13 +14,17 @@ class Game {
 
   Game(std::size_t grid_width, std::size_t grid_height);
 
+  void showInstruction(Controller const &controller, Renderer &renderer,
+                       std::size_t target_frame_duration);
+
   void Run(Controller const &controller, Renderer &renderer,
            std::size_t target_frame_duration);
 
 
   int GetSize() const;
 
-  Common::WindowType windowType = Common::WindowType::GameWindow;
+
+  Common::WindowType windowType = Common::WindowType::InstructionWindow;
   Common indicator;
 
   bool superFoodExist = false;
@@ -31,7 +35,6 @@ class Game {
   Snake snake;
   Map map;
 
-  Common foodCollected;
   SDL_Point food;
   SDL_Point superFood;
   int timerForSuperFood = 0;

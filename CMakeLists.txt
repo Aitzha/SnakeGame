@@ -18,7 +18,7 @@ include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_TTF_INCLUDE_DIR} src)
 #include_directories(${SDL2_INCLUDE_DIRS} src)
 
 
-add_executable(SnakeGame src/main.cpp src/game.h src/controller.h src/renderer.h src/snake.h src/game.cpp src/controller.cpp src/renderer.cpp src/snake.cpp src/Common.cpp src/Common.h src/Map.cpp src/Map.h)
+add_executable(SnakeGame src/main.cpp src/game.h src/controller.h src/renderer.h src/snake.h src/game.cpp src/controller.cpp src/renderer.cpp src/snake.cpp src/Common.cpp src/Common.h src/Map.cpp src/Map.h src/Text.cpp src/Text.h)
 #string(STRIP ${SDL2_LIBRARIES} SDL2_LIBRARIES)
 #target_link_libraries(SnakeGame ${SDL2_LIBRARIES})
 target_link_libraries(SnakeGame ${SDL2_LIBRARIES} ${SDL2_TTF_LIBRARIES})

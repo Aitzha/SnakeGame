@@ -197,6 +197,33 @@ src/Map.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/Map.cpp.s
 .PHONY : src/Map.cpp.s
 
+src/Text.o: src/Text.cpp.o
+
+.PHONY : src/Text.o
+
+# target to build an object file
+src/Text.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/Text.cpp.o
+.PHONY : src/Text.cpp.o
+
+src/Text.i: src/Text.cpp.i
+
+.PHONY : src/Text.i
+
+# target to preprocess a source file
+src/Text.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/Text.cpp.i
+.PHONY : src/Text.cpp.i
+
+src/Text.s: src/Text.cpp.s
+
+.PHONY : src/Text.s
+
+# target to generate assembly for a file
+src/Text.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/Text.cpp.s
+.PHONY : src/Text.cpp.s
+
 src/controller.o: src/controller.cpp.o
 
 .PHONY : src/controller.o
@@ -347,6 +374,9 @@ help:
 	@echo "... src/Map.o"
 	@echo "... src/Map.i"
 	@echo "... src/Map.s"
+	@echo "... src/Text.o"
+	@echo "... src/Text.i"
+	@echo "... src/Text.s"
 	@echo "... src/controller.o"
 	@echo "... src/controller.i"
 	@echo "... src/controller.s"

@@ -38,6 +38,52 @@ Renderer::~Renderer() {
   SDL_Quit();
 }
 
+void Renderer::renderInstruction() {
+    // Clear screen
+    SDL_SetRenderDrawColor(sdl_renderer, 0x1E, 0x1E, 0x1E, 0xFF);
+    SDL_RenderClear(sdl_renderer);
+    // Draw text
+    int x = 50, y = 50;
+    Text text;
+    textTexture = text.identifyText(instructionText);
+    int wordStartIndex = 1;
+    int wordEndIndex = 0;
+
+    for(std::vector<Text::Line> element : textTexture) {
+        wordEndIndex++;
+        int space = 0;
+        if(element.empty() || wordEndIndex == instructionText.length()) {
+            if(wordEndIndex == instructionText.length()) {
+                space = 0;
+            }
+            if(((wordEndIndex - wordStartIndex - space) * 30) + x + 50 > screen_width) {
+                y += 50;
+                x = 50;
+            }
+            int currentIndex = 1;
+            for(auto letter : textTexture) {
+                if(currentIndex >= wordStartIndex) {
+                    for(auto line : letter) {
+                        SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+                        SDL_Point a = text.getPoint(line.a, x, y);
+                        SDL_Point b = text.getPoint(line.b, x, y);
+                        SDL_RenderDrawLine(sdl_renderer, a.x, a.y, b.x, b.y);
+                    }
+                    x += 30;
+                    if(wordEndIndex == currentIndex) {
+                        wordStartIndex = wordEndIndex + 1;
+                        break;
+                    }
+                }
+                currentIndex++;
+            }
+        }
+    }
+
+    // Update Screen
+    SDL_RenderPresent(sdl_renderer);
+}
+
 void Renderer::Render(Snake const snake, SDL_Point const &food, Map &map,
                       SDL_Point const &superFood, bool superFoodExist) {
   SDL_Rect block;
@@ -97,8 +143,7 @@ void Renderer::UpdateWindowTitle(Common indicator, int fps, int timer) {
       std::string title{"Snake Score: " + std::to_string(indicator.score) + " FPS: " + std::to_string(fps)};
       SDL_SetWindowTitle(sdl_window, title.c_str());
   } else {
-      int sec = timer / 1000;
-      std::string title{"SuperFood will disappear in " + std::to_string(sec) + " sec"};
+      std::string title{"SuperFood will disappear in " + std::to_string(timer) + " sec"};
       SDL_SetWindowTitle(sdl_window, title.c_str());
   }
 }
