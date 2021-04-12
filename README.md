@@ -6,7 +6,7 @@ This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree P
 
 This project is a classic snake game with some features. It has superfood which will appear after eating 10 basic food. Superfood costs 5 scores and will appear only for 10 sec. Try to avoid the walls and tail of the snake.
 
-<img src="Snake Game.pdf"/>
+![image](SnakeGameDiagram.png)
 
 In this diagram, you can see how classes work with each other.
 The class Common has common attributes for the game like score, the number of food was eaten and terminated bool variable.
