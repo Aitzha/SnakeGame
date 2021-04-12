@@ -30,7 +30,7 @@ class Renderer {
   const std::size_t grid_width;
   const std::size_t grid_height;
 
-    std::vector<std::vector<Text::Line>> textTexture;
+  std::vector<std::vector<Text::Line>> textTexture;
 
   std::vector<std::string> instructionText = {"Use WASD or arrow keys to move",
                                               "Press Space to start"};

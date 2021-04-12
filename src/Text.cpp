@@ -4,155 +4,155 @@
 
 #include "Text.h"
 
-std::vector<std::vector<Text::Line>> Text::identifyText(std::string s) {
+std::vector<std::vector<Text::Line>> Text::identifyText(std::string sentence) {
     std::vector<std::vector<Line>> textCoordinates;
 
-    for(char c : s) {
+    for(char c : sentence) {
         textCoordinates.push_back(identifyLetter(c));
     }
     return textCoordinates;
 }
 
-std::vector<Text::Line> Text::identifyLetter(char c) {
-    if(c == 'A' || c == 'a') {
+std::vector<Text::Line> Text::identifyLetter(char letter) {
+    if(letter == 'A' || letter == 'a') {
         Text::Line line1(7, 1);
         Text::Line line2(1, 3);
         Text::Line line3(3, 9);
         Text::Line line4(4, 6);
         return std::vector<Text::Line> {line1, line2, line3, line4};
-    } else if(c == 'B' || c == 'b') {
+    } else if(letter == 'B' || letter == 'b') {
         Text::Line line1(7, 1);
         Text::Line line2(1, 3);
         Text::Line line3(3, 9);
         Text::Line line4(4, 6);
         Text::Line line5(7, 9);
         return std::vector<Text::Line> {line1, line2, line3, line4, line5};
-    } else if(c == 'C' || c == 'c') {
+    } else if(letter == 'C' || letter == 'c') {
         Text::Line line1(1, 3);
         Text::Line line2(1, 7);
         Text::Line line3(7, 9);
         return std::vector<Text::Line> {line1, line2, line3};
-    } else if(c == 'D' || c == 'd') {
+    } else if(letter == 'D' || letter == 'd') {
         Text::Line line1(1, 3);
         Text::Line line2(1, 7);
         Text::Line line3(7, 9);
         Text::Line line4(3, 9);
         return std::vector<Text::Line> {line1, line2, line3, line4};
-    } else if(c == 'E' || c == 'e') {
+    } else if(letter == 'E' || letter == 'e') {
         Text::Line line1(1, 3);
         Text::Line line2(1, 7);
         Text::Line line3(7, 9);
         Text::Line line4(4, 6);
         return std::vector<Text::Line> {line1, line2, line3, line4};
-    } else if(c == 'F' || c == 'f') {
+    } else if(letter == 'F' || letter == 'f') {
         Text::Line line1(1, 3);
         Text::Line line2(1, 7);
         Text::Line line3(4, 6);
         return std::vector<Text::Line> {line1, line2, line3};
-    } else if(c == 'G' || c == 'g') {
+    } else if(letter == 'G' || letter == 'g') {
         Text::Line line1(1, 3);
         Text::Line line2(1, 7);
         Text::Line line3(7, 9);
         Text::Line line4(5, 9);
         Text::Line line5(6, 9);
         return std::vector<Text::Line> {line1, line2, line3, line4, line5};
-    } else if(c == 'H' || c == 'h') {
+    } else if(letter == 'H' || letter == 'h') {
         Text::Line line1(1, 7);
         Text::Line line2(4, 6);
         Text::Line line3(3, 9);
         return std::vector<Text::Line> {line1, line2, line3};
-    } else if(c == 'I' || c == 'i') {
+    } else if(letter == 'I' || letter == 'i') {
         Text::Line line1(1, 3);
         Text::Line line2(2, 8);
         Text::Line line3(7, 9);
         return std::vector<Text::Line> {line1, line2, line3};
-    } else if(c == 'J' || c == 'j') {
+    } else if(letter == 'J' || letter == 'j') {
         Text::Line line1(1, 3);
         Text::Line line2(2, 8);
         Text::Line line3(7, 8);
         return std::vector<Text::Line> {line1, line2, line3};
-    } else if(c == 'K' || c == 'k') {
+    } else if(letter == 'K' || letter == 'k') {
         Text::Line line1(1, 7);
         Text::Line line2(4, 3);
         Text::Line line3(4, 9);
         return std::vector<Text::Line> {line1, line2, line3};
-    } else if(c == 'L' || c == 'l') {
+    } else if(letter == 'L' || letter == 'l') {
         Text::Line line1(1, 7);
         Text::Line line2(7, 9);
         return std::vector<Text::Line> {line1, line2};
-    } else if(c == 'M' || c == 'm') {
+    } else if(letter == 'M' || letter == 'm') {
         Text::Line line1(1, 7);
         Text::Line line2(3, 9);
         Text::Line line3(1, 5);
         Text::Line line4(5, 3);
         return std::vector<Text::Line> {line1, line2, line3, line4};
-    } else if(c == 'N' || c == 'n') {
+    } else if(letter == 'N' || letter == 'n') {
         Text::Line line1(1, 7);
         Text::Line line2(3, 9);
         Text::Line line3(1, 9);
         return std::vector<Text::Line> {line1, line2, line3};
-    } else if(c == 'O' || c == 'o') {
+    } else if(letter == 'O' || letter == 'o') {
         Text::Line line1(1, 3);
         Text::Line line2(1, 7);
         Text::Line line3(7, 9);
         Text::Line line4(3, 9);
         return std::vector<Text::Line> {line1, line2, line3, line4};
-    } else if(c == 'P' || c == 'p') {
+    } else if(letter == 'P' || letter == 'p') {
         Text::Line line1(1, 3);
         Text::Line line2(1, 7);
         Text::Line line3(4, 6);
         Text::Line line4(6, 3);
         return std::vector<Text::Line> {line1, line2, line3, line4};
-    } else if(c == 'Q' || c == 'q') {
+    } else if(letter == 'Q' || letter == 'q') {
         Text::Line line1(1, 3);
         Text::Line line2(1, 7);
         Text::Line line3(7, 9);
         Text::Line line4(3, 9);
         Text::Line line5(9, 10);
         return std::vector<Text::Line> {line1, line2, line3, line4, line5};
-    } else if(c == 'R' || c == 'r') {
+    } else if(letter == 'R' || letter == 'r') {
         Text::Line line1(1, 3);
         Text::Line line2(1, 7);
         Text::Line line3(4, 6);
         Text::Line line4(6, 3);
         Text::Line line5(4, 9);
         return std::vector<Text::Line> {line1, line2, line3, line4, line5};
-    } else if(c == 'S' || c == 's') {
+    } else if(letter == 'S' || letter == 's') {
         Text::Line line1(1, 3);
         Text::Line line2(1, 4);
         Text::Line line3(4, 6);
         Text::Line line4(6, 9);
         Text::Line line5(7, 9);
         return std::vector<Text::Line> {line1, line2, line3, line4, line5};
-    } else if(c == 'T' || c == 't') {
+    } else if(letter == 'T' || letter == 't') {
         Text::Line line1(1, 3);
         Text::Line line2(2, 8);
         return std::vector<Text::Line> {line1, line2};
-    } else if(c == 'U' || c == 'u') {
+    } else if(letter == 'U' || letter == 'u') {
         Text::Line line1(1, 7);
         Text::Line line2(7, 9);
         Text::Line line3(9, 3);
         return std::vector<Text::Line> {line1, line2, line3};
-    } else if(c == 'V' || c == 'v') {
+    } else if(letter == 'V' || letter == 'v') {
         Text::Line line1(1, 8);
         Text::Line line2(8, 3);
         return std::vector<Text::Line> {line1, line2};
-    } else if(c == 'W' || c == 'w') {
+    } else if(letter == 'W' || letter == 'w') {
         Text::Line line1(1, 7);
         Text::Line line2(3, 9);
         Text::Line line3(7, 5);
         Text::Line line4(5, 9);
         return std::vector<Text::Line> {line1, line2, line3, line4};
-    } else if(c == 'X' || c == 'x') {
+    } else if(letter == 'X' || letter == 'x') {
         Text::Line line1(1, 9);
         Text::Line line2(3, 7);
         return std::vector<Text::Line> {line1, line2};
-    } else if(c == 'Y' || c == 'y') {
+    } else if(letter == 'Y' || letter == 'y') {
         Text::Line line1(1, 5);
         Text::Line line2(5, 3);
         Text::Line line3(5, 8);
         return std::vector<Text::Line> {line1, line2, line3};
-    } else if(c == 'Z' || c == 'z') {
+    } else if(letter == 'Z' || letter == 'z') {
         Text::Line line1(1, 3);
         Text::Line line2(3, 7);
         Text::Line line3(7, 9);

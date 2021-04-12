@@ -21,8 +21,8 @@ public:
 
     Text()= default;;
 
-    std::vector<std::vector<Text::Line>> identifyText(std::string s);
-    std::vector<Text::Line> identifyLetter(char c);
+    std::vector<std::vector<Text::Line>> identifyText(std::string sentence);
+    std::vector<Text::Line> identifyLetter(char letter);
     SDL_Point getPoint(int a, int x, int y);
 private:
 };

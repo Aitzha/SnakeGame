@@ -4,9 +4,20 @@ This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree P
 
 <img src="snake_game.gif"/>
 
-The Capstone Project gives you a chance to integrate what you've learned throughout this program. This project will become an important part of your portfolio to share with current and future colleagues and employers.
+This project is a classic snake game with some features. It has superfood which will appear after eating 10 basic food. Superfood costs 5 scores and will appear only for 10 sec. Try to avoid the walls and tail of the snake.
 
-In this project, you can build your own C++ application or extend this Snake game, following the principles you have learned throughout this Nanodegree Program. This project will demonstrate that you can independently create applications using a wide range of C++ features.
+<img src="Snake Game.pdf"/>
+
+In this diagram, you can see how classes work with each other.
+The class Common has common attributes for the game like score, the number of food was eaten and terminated bool variable.
+The class Controller takes inputs from the keyboard and makes changes in the Snake class.
+The class Map makes a map for the game.
+The class Snake moves the snake and grows its body.
+The class Text helps the Render class to render text.
+The class Renderer renders the map, snake and text for each frame.
+The class Game runs the loop in which updates each frame and draws it with Render class.
+
+The initial project already had Game, Controller, Renderer and Snake classes and the latest version of this code has additional classes Common, Text and Map. (Loops, Function, I/O and OOP)
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
